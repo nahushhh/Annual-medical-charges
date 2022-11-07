@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 style="text-align: center;">Annual Medical Charges Prediction</h1> <br>
+
+    <form action="/recommend", method="POST">
+        <div class="mb-3">
+            <center><input style="width: 30%;" name="age" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Age" required></center><br>  
+            <center><input style="width: 30%;" name="bmi" type="number" class="form-control" id="exampleFormControlInput1" placeholder="BMI" step="0.01" required></center><br> 
+            <center><input style="width: 30%;" name="children" type="number" class="form-control" id="exampleFormControlInput1" placeholder="No. of Children" required></center><br> 
+        </div>
+        
+        <center>
+            <select style="width: 30%;" name="region" class="form-select" aria-label="Default select example" required aria-placeholder="Region">
+            <option selected>Region</option>
+            <option value="northeast">Northeast</option>
+            <option value="northwest">Northwest</option>
+            <option value="southeast">Southeast</option>
+            <option value="southwest">Southwest</option>
+          </select>
+        </center> <br>
+    
+        <center>
+            <select style="width: 30%;" name="gender" class="form-select" aria-label="Default select example" required aria-placeholder="Gender">
+            <option selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </center> <br>
+    
+        <center>
+            <select style="width: 30%;" name="smoker" class="form-select" aria-label="Default select example" required aria-placeholder="Smoker">
+            <option selected>Smoker?</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </center> <br>
+        
+        <center><input  class="btn btn-primary" type="submit" value="Submit"></center>
+    </form> <br>
+
+    {% if ans %}
+      <center><p>Your annual medical charge in approximately $ {{ ans }}</p></center>
+    {% endif %}
+
+    
+
+
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>
